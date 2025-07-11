@@ -11,6 +11,7 @@ interface HeaderProps {
 
 // Available programming languages
 const LANGUAGES = [
+  { value: 'any', label: 'Any Programming Languages' },
   { value: 'python', label: 'Python' },
   { value: 'javascript', label: 'JavaScript' },
   { value: 'java', label: 'Java' },
@@ -19,6 +20,9 @@ const LANGUAGES = [
   { value: 'go', label: 'Go' },
   { value: 'rust', label: 'Rust' },
   { value: 'typescript', label: 'TypeScript' },
+  { value: 'html', label: 'HTML' },
+  { value: 'css', label: 'CSS' },
+  { value: 'php', label: 'PHP' },
 ];
 
 export function Header({ currentLanguage, setLanguage, onOpenSettings }: HeaderProps) {
@@ -53,7 +57,7 @@ export function Header({ currentLanguage, setLanguage, onOpenSettings }: HeaderP
     // Also save the language preference to config
     window.electronAPI.updateConfig({
       language: lang
-    }).catch(error => {
+    }).catch((error: any) => {
       console.error('Failed to save language preference:', error);
     });
   };

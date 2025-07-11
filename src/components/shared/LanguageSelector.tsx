@@ -25,7 +25,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
       setLanguage(newLanguage)
       
       console.log(`Language changed to ${newLanguage}`);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error updating language:", error)
     }
   }
@@ -40,6 +40,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           className="bg-black/80 text-white/90 rounded px-2 py-1 text-sm outline-none border border-white/10 focus:border-white/20"
           style={{ WebkitAppearance: 'menulist' }}
         >
+          <option value="any" className="bg-black text-white">Any Programming Languages</option>
           <option value="python" className="bg-black text-white">Python</option>
           <option value="javascript" className="bg-black text-white">JavaScript</option>
           <option value="java" className="bg-black text-white">Java</option>
@@ -50,6 +51,9 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           <option value="ruby" className="bg-black text-white">Ruby</option>
           <option value="sql" className="bg-black text-white">SQL</option>
           <option value="r" className="bg-black text-white">R</option>
+          <option value="html" className="bg-black text-white">HTML</option>
+          <option value="css" className="bg-black text-white">CSS</option>
+          <option value="php" className="bg-black text-white">PHP</option>
         </select>
       </div>
     </div>
